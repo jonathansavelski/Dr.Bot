@@ -143,14 +143,17 @@
 /*Medium Breapoint*/
 @media (max-width: 768px) {
 
-    /* Features section */
-    .features__container {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem 5rem;
+    /* Hero */
+
+    #hero {
+        text-align: center;
     }
 
     /* How it works section */
+
+    #hiw {
+        text-align: center;
+    }
 
     .hiw__container {
         gap: 0;
@@ -160,7 +163,7 @@
         flex-direction: column;
         margin-top: 0;
         gap: 0;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .hiw__section:nth-child(2) {
@@ -173,14 +176,30 @@
         margin-bottom: 20px;
     }
 
-    /* .hiw__section__description h3 {
-        margin-top: 30px;
-    } */
+    /* Features section */
+
+    #features {
+        text-align: center;
+    }
+
+    .features__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem 5rem;
+    }
 
     /* Testimonials section */
     .testimonials__container {
         flex-direction: column;
         gap: 2rem;
+    }
+
+    .testimonials__description {
+        text-align: center;
+    }
+
+    .testimonials__description__user {
+        justify-content: center;
     }
 
     .testimonials__images {
