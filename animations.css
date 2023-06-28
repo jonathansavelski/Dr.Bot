@@ -1,0 +1,195 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    /*Para que quede por encima del resto de las cosas*/
+
+    /*Efecto de Glassmorphismo*/
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+}
+
+#menu-toggle:checked~.overlay {
+    display: block;
+}
+
+.navbar__list li,
+.form__return {
+    position: relative;
+    padding: 0;
+    width: fit-content;
+}
+
+.navbar__list li a::after,
+.form__return a::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: var(--headline);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar__list li a:hover {
+    color: var(--headline);
+}
+
+.navbar__list li:last-child a:hover {
+    color: white;
+}
+
+.navbar__list li:last-child a::after {
+    width: 0;
+}
+
+.navbar__list li a:hover::after,
+.form__return a:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+}
+
+/* Buttons */
+
+.btn:hover {
+    background-color: var(--button);
+    transition: all 0.2s ease-in;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+}
+
+/* Animacion slide arriba */
+/*Funcionamiento: Hacemos llegar al elemento animado desde abajo*/
+@keyframes slide-up {
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Animacion slide derecha */
+/*Funcionamiento: Hacemos llegar al elemento animado desde la derecha*/
+
+@keyframes slide-right {
+    from {
+        transform: translateX(100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Hero */
+.hero__info h1 {
+    animation: fade 1s ease-in, slide-up 1.3s ease-in-out;
+}
+
+.hero__info p,
+.hero__info__btn {
+    animation: fade 1s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+.hero__companies img:nth-child(1) {
+    animation: slide2 1s ease-in forwards, slide-left 1.3s ease-in-out;
+}
+
+.hero__companies img:nth-child(2),
+.hero__companies img:nth-child(3) {
+    animation: fade2 1s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+.hero__companies img:nth-child(4) {
+    animation: fade2 1s ease-in forwards, slide-right 1.3s;
+}
+
+/* How it works */
+.hiw__section {
+    animation: fade 1s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+/* Features */
+.features__feature__image,
+.features__feature h3,
+.features__feature p,
+h2 {
+    animation: fade 1s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+/* Testimonial */
+
+.testimonials__description p,
+.testimonials__description__user {
+    animation: fade 1s ease-in forwards, slide-up 1.3s ease-in-out;
+}
+
+/* Pricing */
+.pricing__card:nth-child(1) {
+    animation: fade 0.8s ease-in, slide-up 1.3s;
+    /* animation-delay: 0.8s; */
+}
+
+.pricing__card:nth-child(2) {
+    animation: fade 0.8s ease-in, slide-up 2.3s;
+}
+
+.pricing__card:nth-child(3) {
+    animation: fade 0.8s ease-in, slide-up 3.3s;
+}
+
+/* Contact */
+.contact__container {
+    animation: fade 0.8s ease-in, slide-up 1.3s ease-in-out;
+}
+
+#login,
+#signup {
+    animation: fade 0.5s ease-in;
+    animation-delay: -0.1s;
+}
